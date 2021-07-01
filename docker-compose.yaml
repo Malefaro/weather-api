@@ -1,0 +1,15 @@
+version: "3.9"
+services: 
+        
+    weather:
+        restart: on-failure
+        build: 
+            context: ./
+            dockerfile: ./Dockerfile
+        environment: 
+            VC_TOKEN: "PUT_HERE_TOKEN_OF_VISUAL_CROSSING"
+            AW_CLIENT_ID: "PUT_HERE_CLIENT_ID_OF_AERIS_WEATHER"
+            AW_CLIENT_SECRET: "PUT_HERE_CLIENT_SECRET_OF_AERIS_WEATHER"
+            PORT: "8080"
+        ports: 
+            - "8080:8080"
